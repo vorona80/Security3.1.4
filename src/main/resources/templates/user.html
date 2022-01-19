@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UserPage</title>
+</head>
+<body>
+
+<!--    <a th:href="@{/user/{id}(id=${people.getId()})}" th:text="${people.getId()}"></a>-->
+<h2><a th:text="${people.getUsername()}"></a> with roles: <a th:text="${people.getRoles()}"></a></h2>
+<h1>User information-page</h1>
+
+
+<input type="submit" value="User"/>
+<input type="submit" value="User"/>
+
+</form>
+<br>
+<div th:switch="${people}">
+    <h2 th:case="null">No user found</h2>
+    <div th:case="*">
+        <h2>About User</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Lastname</th>
+                <th>Age</th>
+                <th>Role</th>
+            </tr>
+            </thead>
+            <tbody>
+<!--            <h3>Id - <a th:text="${people.getId()}" ></a></h3>-->
+<!--            <h3>Username - <a th:text="${people.getUsername()}" ></a></h3>-->
+<!--            <h3>LastName - <a th:text="${people.getLastName()}" ></a></h3>-->
+<!--            <h3>Age - <a th:text="${people.getAge()}"></a></h3>-->
+<!--            <h3>Role -  <a th:text="${people.getRoles()}"></a></h3>   -->
+
+<td><a th:text="${people.getId()}" ></a></td>
+<td><a th:text="${people.getUsername()}" ></a></td>
+<td><a th:text="${people.getLastName()}" ></a></td>
+<td><a th:text="${people.getAge()}"></a></td>
+<td><a th:text="${people.getRoles()}"></a></td>
+<br>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<a href="/logout">Logout</a>
+
+<!--    <a th:href="@{/user/{id}/edit(id=${us.getId()})}"><input type="submit" value="Uptate" /></a>-->
+<!--    <a th:href="@{/user/delete/{id}(id=${us.getId()})}"><input type="submit" value="Delete" /></a>-->
+</body>
+</html>
